@@ -1,0 +1,14 @@
+[project]
+name = "ymc-node-as-x-type"
+description = "some comfyui custom nodes to set it as known type"
+version = "0.1.0"
+license = "LICENSE"
+
+[project.urls]
+Repository = "https://github.com/ymc-github/ymc-node-as-x-type"
+#  Used by Comfy Registry https://comfyregistry.org
+
+[tool.comfy]
+PublisherId = "ymc-github"
+DisplayName = "ymc-node-as-x-type"
+Icon = ""

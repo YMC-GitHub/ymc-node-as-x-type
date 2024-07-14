@@ -1,0 +1,2 @@
+yors_comfyui_node_setup
+yors_comfyui_node_as_x_type
