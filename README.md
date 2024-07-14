@@ -6,6 +6,10 @@
 
 </div>
 
+## Why
+
+- it may be better to use to enhance [use cg-use-everywhere to link nodes in wifi](https://github.com/chrisgoringe/cg-use-everywhere) for some case.
+
 ## Features
 
 - feat(core): node to set it as any type
@@ -27,7 +31,7 @@
 git clone https://github.com/ymc-github/ymc-node-as-x-type
 ```
 
-- **deps will be installed automatically** if requirements in requirements.txtnot installed when comfyui up
+- **deps will be installed automatically** if requirements in requirements.txt not installed when comfyui up
 
 ## Usage
 
@@ -38,6 +42,7 @@ git clone https://github.com/ymc-github/ymc-node-as-x-type
 ## Based-on
 
 - pypi package [yors_comfyui_node_setup](https://pypi.org/project/yors_comfyui_node_setup/)
+
 - pypi package [yors_comfyui_node_as_x_type](https://pypi.org/project/yors_comfyui_node_as_x_type/)
 
 ## Published to Comfy registry
@@ -45,6 +50,8 @@ git clone https://github.com/ymc-github/ymc-node-as-x-type
 - get more details in [publish_to_comfy.yml](.github/workflows/publish_to_comfy.yml)
 
 - [docs for publishing to comfy registey](https://docs.comfy.org/registry/overview)
+
+- installed with comfy-cli ? `comfy node registry-install ymc-node-as-x-type`
 
 ## Author
 
