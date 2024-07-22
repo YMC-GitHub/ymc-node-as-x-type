@@ -2,7 +2,7 @@
 name = "ymc-node-as-x-type"
 description = "some comfyui custom nodes to set it as known type"
 version = "0.1.0"
-license = "LICENSE"
+license = { file = "LICENSE" }
 
 [project.urls]
 Repository = "https://github.com/ymc-github/ymc-node-as-x-type"
