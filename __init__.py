@@ -1,31 +1,47 @@
-# v1
-# from yors_comfyui_node_setup import entry,node_install_requirements # global
 
-# # install requirements
-# node_install_requirements(__file__)
+import pathlib
+import toml
+from yors_comfyui_node_setup import entry
+from yors_pano_ansi_color import info_status,info_step,msg_padd,log_msg
 
-# # export comfyui node vars
-# __all__,NODE_CLASS_MAPPINGS,NODE_DISPLAY_NAME_MAPPINGS,NODE_MENU_NAMES = entry(__name__,__file__)
+def get_version_from_pyproject(file: pathlib.Path, fallback: str = '1.0.0'):
+    """
+    get version from pyproject.toml 's project.version
 
-# v2
-from yors_comfyui_node_setup import node_install_requirements,entry_pre_import,entry_import,get_all_classs_in_sys,register_node_list_local
+    get_version_from_pyproject(pathlib.Path(__file__).parent / 'pyproject.toml')
+    """
+    try:
+        pyproject_content = file.read_text()
+        pyproject = toml.loads(pyproject_content)
+        version = pyproject.get('project', {}).get('version', '0.0.0')
+    except FileNotFoundError:
+        print("pyproject.toml not found, using default version.")
+        version = fallback
+    except Exception as e:
+        print(f"An error occurred while reading pyproject.toml: {e}")
+        version = fallback
+    return version
 
-# install requirements
-node_install_requirements(__file__)
+__all__,NODE_CLASS_MAPPINGS,NODE_DISPLAY_NAME_MAPPINGS,NODE_MENU_NAMES = entry(__name__,__file__,False)
 
-# gen __all__
-__all__ = entry_pre_import(__name__,__file__)
+info_step(f"__all__ + WEB_DIRECTORY")
+WEB_DIRECTORY = "./web"
+__all__ = ["NODE_CLASS_MAPPINGS", "NODE_DISPLAY_NAME_MAPPINGS", "WEB_DIRECTORY"]
 
-# import moudle with __all__
-entry_import(__name__,__all__)
+# get directory of this file
+current_file_path = pathlib.Path(__file__)
+name = str(current_file_path.parent)
+pyproject_file = current_file_path.parent / 'pyproject.toml'
+version= get_version_from_pyproject(pyproject_file)
 
-# get class after importing moudle with __all__
-this_module_all_classes = get_all_classs_in_sys(__name__)
 
-# register node with default category
-# NODE_CLASS_MAPPINGS,NODE_DISPLAY_NAME_MAPPINGS,NODE_MENU_NAMES  = register_node_list(this_module_all_classes,False)
-
-# addtional register node with custom category
-NODE_CLASS_MAPPINGS,NODE_DISPLAY_NAME_MAPPINGS,NODE_MENU_NAMES  = register_node_list_local(this_module_all_classes,True,"YMC/as_x_type")
-# print(NODE_CLASS_MAPPINGS,NODE_DISPLAY_NAME_MAPPINGS,NODE_MENU_NAMES)
-print("\n".join(NODE_MENU_NAMES))
+log_msg(msg_padd("=",60,"="))
+log_msg(msg_padd(f'welocme to {name}',60,"="))
+log_msg(f'version: {version}')
+log_msg(f'node counts:{len(NODE_MENU_NAMES)}')
+log_msg(f'node menu names:')
+NODE_MENU_NAMES.sort()
+for node_name in NODE_MENU_NAMES:
+    # log_msg(f'node name:{node_name}')
+    info_status(f'{node_name}',0)
+log_msg(msg_padd("=",60,"="))

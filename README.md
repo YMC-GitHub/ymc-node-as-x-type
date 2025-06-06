@@ -24,6 +24,21 @@
 - feat(core): node to set it as float type
 - feat(core): node to set it as number type
 
+
+## Nodes
+- nodes show in console:
+<div style="text-align: center;">
+  <img src="./shotscreen/nodes.console.png" alt="console" width="256">
+  <!-- <img src="./shotscreen/nodes.right.menu.png" alt="right mouse menu" width="256"> -->
+</div>
+
+- nodes show in right mouse menu:
+
+<div style="text-align: center;">
+  <!-- <img src="./shotscreen/nodes.console.png" alt="console" width="256"> -->
+  <img src="./shotscreen/nodes.right.menu.png" alt="right mouse menu" width="256">
+</div>
+
 ## Install
 
 ```bash
@@ -31,19 +46,21 @@
 git clone https://github.com/ymc-github/ymc-node-as-x-type
 ```
 
-- **deps will be installed automatically** if requirements in requirements.txt not installed when comfyui up
+- **deps will be installed automatically** if deps in requirements.txt were not installed when comfyui up
 
 ## Usage
 
 - you can find it in search box : double click + typing `set it as`
 - you can find it in right mouse menu : `YMC/LINK`
-- you can find it in right mouse menu : `YMC/as_x_type` (as alias)
+- ~~you can find it in right mouse menu : `YMC/as_x_type` (as alias)~~
 
 ## Based-on
 
-- pypi package [yors_comfyui_node_setup](https://pypi.org/project/yors_comfyui_node_setup/)
+- pypi package [yors_comfyui_node_setup](https://pypi.org/project/yors_comfyui_node_setup/) -  setup comfyui custom nodes easily
+- ~~pypi package [yors_comfyui_node_as_x_type](https://pypi.org/project/yors_comfyui_node_as_x_type/) - use its nodes~~
+- pypi package [yors_pano_ansi_color](https://pypi.org/project/yors_pano_ansi_color/) - info msg in console with color in your comfyui custom nodes easily
+- pypi package [yors_pano_zero_field](https://pypi.org/project/yors_pano_zero_field/) - set nodes input field to be HQ in your comfyui custom nodes easily 
 
-- pypi package [yors_comfyui_node_as_x_type](https://pypi.org/project/yors_comfyui_node_as_x_type/)
 
 ## Published to Comfy registry
 
